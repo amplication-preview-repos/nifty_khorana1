@@ -2,6 +2,12 @@ import { Module } from "@nestjs/common";
 import { NewsModule } from "./news/news.module";
 import { TutorialModule } from "./tutorial/tutorial.module";
 import { VideoModule } from "./video/video.module";
+import { PageModule } from "./page/page.module";
+import { TextBlockModule } from "./textBlock/textBlock.module";
+import { VideoBlockModule } from "./videoBlock/videoBlock.module";
+import { ImageBlockModule } from "./imageBlock/imageBlock.module";
+import { AboutModule } from "./about/about.module";
+import { DownloadsModule } from "./downloads/downloads.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
@@ -17,6 +23,12 @@ import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
     NewsModule,
     TutorialModule,
     VideoModule,
+    PageModule,
+    TextBlockModule,
+    VideoBlockModule,
+    ImageBlockModule,
+    AboutModule,
+    DownloadsModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,

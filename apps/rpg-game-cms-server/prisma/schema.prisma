@@ -38,6 +38,62 @@ model Video {
   duration    Int?
 }
 
+model Page {
+  id          String       @id @default(cuid())
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  title       String?
+  videoBlocks VideoBlock[]
+  imageBlocks ImageBlock[]
+  textBlocks  TextBlock[]
+}
+
+model TextBlock {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content   String?
+  page      Page?    @relation(fields: [pageId], references: [id])
+  pageId    String?
+}
+
+model VideoBlock {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  description String?
+  page        Page?    @relation(fields: [pageId], references: [id])
+  pageId      String?
+  url         String?
+}
+
+model ImageBlock {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  url         String?
+  description String?
+  page        Page?    @relation(fields: [pageId], references: [id])
+  pageId      String?
+}
+
+model About {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content   String?
+  title     String?
+}
+
+model Downloads {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  title       String?
+  description String?
+  downloadUrl String?
+}
+
 enum EnumTutorialDifficultyLevel {
   Option1
 }

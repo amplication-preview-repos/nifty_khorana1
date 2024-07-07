@@ -17,6 +17,30 @@ import { VideoList } from "./video/VideoList";
 import { VideoCreate } from "./video/VideoCreate";
 import { VideoEdit } from "./video/VideoEdit";
 import { VideoShow } from "./video/VideoShow";
+import { PageList } from "./page/PageList";
+import { PageCreate } from "./page/PageCreate";
+import { PageEdit } from "./page/PageEdit";
+import { PageShow } from "./page/PageShow";
+import { TextBlockList } from "./textBlock/TextBlockList";
+import { TextBlockCreate } from "./textBlock/TextBlockCreate";
+import { TextBlockEdit } from "./textBlock/TextBlockEdit";
+import { TextBlockShow } from "./textBlock/TextBlockShow";
+import { VideoBlockList } from "./videoBlock/VideoBlockList";
+import { VideoBlockCreate } from "./videoBlock/VideoBlockCreate";
+import { VideoBlockEdit } from "./videoBlock/VideoBlockEdit";
+import { VideoBlockShow } from "./videoBlock/VideoBlockShow";
+import { ImageBlockList } from "./imageBlock/ImageBlockList";
+import { ImageBlockCreate } from "./imageBlock/ImageBlockCreate";
+import { ImageBlockEdit } from "./imageBlock/ImageBlockEdit";
+import { ImageBlockShow } from "./imageBlock/ImageBlockShow";
+import { AboutList } from "./about/AboutList";
+import { AboutCreate } from "./about/AboutCreate";
+import { AboutEdit } from "./about/AboutEdit";
+import { AboutShow } from "./about/AboutShow";
+import { DownloadsList } from "./downloads/DownloadsList";
+import { DownloadsCreate } from "./downloads/DownloadsCreate";
+import { DownloadsEdit } from "./downloads/DownloadsEdit";
+import { DownloadsShow } from "./downloads/DownloadsShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -63,6 +87,48 @@ const App = (): React.ReactElement => {
           edit={VideoEdit}
           create={VideoCreate}
           show={VideoShow}
+        />
+        <Resource
+          name="Page"
+          list={PageList}
+          edit={PageEdit}
+          create={PageCreate}
+          show={PageShow}
+        />
+        <Resource
+          name="TextBlock"
+          list={TextBlockList}
+          edit={TextBlockEdit}
+          create={TextBlockCreate}
+          show={TextBlockShow}
+        />
+        <Resource
+          name="VideoBlock"
+          list={VideoBlockList}
+          edit={VideoBlockEdit}
+          create={VideoBlockCreate}
+          show={VideoBlockShow}
+        />
+        <Resource
+          name="ImageBlock"
+          list={ImageBlockList}
+          edit={ImageBlockEdit}
+          create={ImageBlockCreate}
+          show={ImageBlockShow}
+        />
+        <Resource
+          name="About"
+          list={AboutList}
+          edit={AboutEdit}
+          create={AboutCreate}
+          show={AboutShow}
+        />
+        <Resource
+          name="Downloads"
+          list={DownloadsList}
+          edit={DownloadsEdit}
+          create={DownloadsCreate}
+          show={DownloadsShow}
         />
       </Admin>
     </div>
