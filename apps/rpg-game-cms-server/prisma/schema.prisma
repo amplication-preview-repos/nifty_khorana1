@@ -1,0 +1,43 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model News {
+  id          String    @id @default(cuid())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  title       String?
+  content     String?
+  publishedAt DateTime?
+  author      String?
+}
+
+model Tutorial {
+  id              String                       @id @default(cuid())
+  createdAt       DateTime                     @default(now())
+  updatedAt       DateTime                     @updatedAt
+  content         String?
+  publishedAt     DateTime?
+  difficultyLevel EnumTutorialDifficultyLevel?
+  title           String?
+}
+
+model Video {
+  id          String    @id @default(cuid())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  title       String?
+  url         String?
+  description String?
+  publishedAt DateTime?
+  duration    Int?
+}
+
+enum EnumTutorialDifficultyLevel {
+  Option1
+}
